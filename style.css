@@ -1,0 +1,872 @@
+
+/* =====================================
+   1. GLOBAL STYLING
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080B1A;
+    color: #F2EFFF;
+    font-family: 'DM Sans', sans-serif;
+}
+
+:root {
+    --background: #080B1A;
+    --card: #11172B;
+    --purple: #9878FF;
+    --blue: #55C9F4;
+    --white: #F2EFFF;
+    --muted: #A6AAC0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+}
+
+
+/* =====================================
+   2. NAVIGATION BAR
+===================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 20px 7%;
+    background: rgba(8, 11, 26, 0.96);
+    border-bottom: 1px solid #242943;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--white);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--blue);
+    font-size: 23px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 27px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--blue);
+}
+
+.nav-button {
+    padding: 12px 17px;
+    border: 1px solid var(--purple);
+    color: var(--white);
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background: var(--purple);
+    box-shadow: 0 0 20px rgba(152,120,255,0.5);
+}
+
+
+/* =====================================
+   3. HERO SECTION
+===================================== */
+
+.hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(8,11,26,0.95),
+        rgba(8,11,26,0.25)
+    ),
+    url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564")
+    center/cover no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+    radial-gradient(
+        circle at 75% 45%,
+        rgba(117,81,255,0.18),
+        transparent 40%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 80px 10%;
+    max-width: 900px;
+    animation: fadeUp 1.2s ease;
+}
+
+.hero-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1.2;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.hero-content h1 span {
+    color: var(--blue);
+    text-shadow: 0 0 25px rgba(85,201,244,0.5);
+}
+
+.hero-description {
+    color: #C4C8DA;
+    max-width: 490px;
+    line-height: 1.9;
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+.main-button {
+    display: inline-block;
+    background: linear-gradient(
+        100deg,
+        var(--purple),
+        #55C9F4
+    );
+    color: #080B1A;
+    padding: 15px 24px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(85,201,244,0.5);
+}
+
+.main-button span {
+    margin-left: 12px;
+}
+
+.hero-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    margin-top: 110px;
+    color: #C4C8DA;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* =====================================
+   4. ORBIT DECORATION
+===================================== */
+
+.orbit-decoration {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    right: 9%;
+    top: 24%;
+    border-radius: 50%;
+    animation: float 5s ease-in-out infinite;
+}
+
+.orbit-ring {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(85,201,244,0.35);
+    border-radius: 50%;
+    transform: rotate(-25deg) scaleY(0.35);
+}
+
+.orbit-planet {
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    top: 110px;
+    left: 110px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        #D8C7FF,
+        #7553C9,
+        #24134B
+    );
+    box-shadow: 0 0 50px rgba(152,120,255,0.6);
+}
+
+
+/* =====================================
+   5. ABOUT SECTION
+===================================== */
+
+.about {
+    text-align: center;
+    padding: 110px 12%;
+    background:
+    radial-gradient(
+        circle at center,
+        #171B3A,
+        #080B1A 70%
+    );
+}
+
+.about h2,
+.section-heading h2,
+.missions h2,
+.facts h2,
+.closing h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+.about h2 span,
+.section-heading h2 span,
+.missions h2 span,
+.facts h2 span,
+.closing h2 span {
+    color: var(--purple);
+}
+
+.about-text {
+    max-width: 680px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.space-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 90px;
+    margin-top: 65px;
+}
+
+.stat h3 {
+    color: var(--blue);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 37px;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* =====================================
+   6. PLANETS SECTION
+===================================== */
+
+.planets {
+    padding: 100px 8%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.section-heading > p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 230px;
+    line-height: 1.8;
+}
+
+.planet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.planet-card {
+    background: linear-gradient(
+        145deg,
+        #171E39,
+        #0E1428
+    );
+    border: 1px solid #282F50;
+    padding: 18px;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+.planet-card:hover {
+    transform: translateY(-9px);
+    border-color: var(--blue);
+    box-shadow: 0 10px 30px rgba(85,201,244,0.12);
+}
+
+.planet-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    margin-bottom: 22px;
+    transition: 0.5s;
+}
+
+.planet-card:hover .planet-image {
+    transform: scale(1.04);
+}
+
+.mercury {
+    background-image: url(
+    "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9"
+    );
+}
+
+.venus {
+    background-image: url(
+    "https://images.unsplash.com/photo-1614732484003-ef9881555dc3"
+    );
+}
+
+.earth {
+    background-image: url(
+    "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4"
+    );
+}
+
+.mars {
+    background-image: url(
+    "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9"
+    );
+}
+
+.jupiter {
+    background-image: url(
+    "https://images.unsplash.com/photo-1630839437035-dac17da580d0"
+    );
+}
+
+.saturn {
+    background-image: url(
+    "https://images.unsplash.com/photo-1614732484003-ef9881555dc3"
+    );
+}
+
+.uranus {
+    background-image: url(
+    "https://images.unsplash.com/photo-1614728263952-84ea256f9679"
+    );
+}
+
+.neptune {
+    background-image: url(
+    "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9"
+    );
+}
+
+.planet-number {
+    color: var(--blue);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.planet-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 17px;
+    margin: 13px 0;
+}
+
+.planet-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   7. GALAXIES SECTION
+===================================== */
+
+.galaxies {
+    padding: 100px 8%;
+    background: #10152A;
+}
+
+.galaxy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.galaxy-card {
+    min-height: 360px;
+    position: relative;
+    display: flex;
+    align-items: end;
+    padding: 25px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+.galaxy-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent,
+        rgba(5,8,20,0.95)
+    );
+}
+
+.galaxy-card:hover {
+    transform: translateY(-7px);
+}
+
+.milky {
+    background-image: url(
+    "https://images.unsplash.com/photo-1462331940025-496dfbfc7564"
+    );
+}
+
+.andromeda {
+    background-image: url(
+    "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986"
+    );
+}
+
+.whirlpool {
+    background-image: url(
+    "https://images.unsplash.com/photo-1462331940025-496dfbfc7564"
+    );
+}
+
+.galaxy-content {
+    position: relative;
+    z-index: 1;
+}
+
+.galaxy-content span {
+    color: var(--blue);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.galaxy-content h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 21px;
+    margin: 14px 0;
+}
+
+.galaxy-content p {
+    color: #C6C8D7;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   8. SPACE MISSIONS
+===================================== */
+
+.missions {
+    padding: 100px 12%;
+    text-align: center;
+}
+
+.mission-list {
+    max-width: 800px;
+    margin: 55px auto 0;
+    text-align: left;
+    border-left: 1px solid var(--purple);
+}
+
+.mission-item {
+    display: flex;
+    gap: 35px;
+    padding: 25px 30px;
+    border-bottom: 1px solid #242943;
+    position: relative;
+    transition: 0.3s;
+}
+
+.mission-item::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--blue);
+    border-radius: 50%;
+    left: -6px;
+    top: 32px;
+    box-shadow: 0 0 15px var(--blue);
+}
+
+.mission-item:hover {
+    background: #121A32;
+}
+
+.year {
+    color: var(--blue);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    min-width: 70px;
+}
+
+.mission-item h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.mission-item p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   9. COSMIC FACTS
+===================================== */
+
+.facts {
+    padding: 100px 8%;
+    text-align: center;
+    background:
+    radial-gradient(
+        circle at center,
+        #1C2045,
+        #080B1A 75%
+    );
+}
+
+.fact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 45px;
+}
+
+.fact-card {
+    padding: 40px 25px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid #343B61;
+    transition: 0.3s;
+}
+
+.fact-card:hover {
+    border-color: var(--purple);
+    transform: translateY(-7px);
+}
+
+.fact-icon {
+    font-size: 40px;
+    color: var(--blue);
+    margin-bottom: 20px;
+}
+
+.fact-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.fact-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+/* =====================================
+   10. CLOSING SECTION
+===================================== */
+
+.closing {
+    padding: 120px 20px;
+    text-align: center;
+    background:
+    linear-gradient(
+        rgba(8,11,26,0.8),
+        rgba(8,11,26,0.9)
+    ),
+    url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986")
+    center/cover no-repeat;
+}
+
+.closing .main-button {
+    margin-top: 20px;
+}
+
+
+/* =====================================
+   11. FOOTER
+===================================== */
+
+footer {
+    background: #050711;
+    text-align: center;
+    padding: 55px 20px 25px;
+}
+
+.footer-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 21px;
+    color: var(--blue);
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+footer > p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--white);
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    color: var(--blue);
+}
+
+.copyright {
+    border-top: 1px solid #242943;
+    padding-top: 25px;
+    margin-top: 25px;
+}
+
+
+/* =====================================
+   12. ANIMATIONS
+===================================== */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+}
+
+
+/* =====================================
+   13. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .planet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .orbit-decoration {
+        right: 2%;
+        opacity: 0.6;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 18px 5%;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-content {
+        padding: 60px 7%;
+    }
+
+    .hero-caption {
+        flex-direction: column;
+        margin-top: 70px;
+    }
+
+    .orbit-decoration {
+        width: 180px;
+        height: 180px;
+        top: 10%;
+        right: -45px;
+        opacity: 0.35;
+    }
+
+    .orbit-planet {
+        width: 55px;
+        height: 55px;
+        top: 62px;
+        left: 62px;
+    }
+
+    .space-stats {
+        gap: 35px;
+    }
+
+    .planets,
+    .galaxies,
+    .facts {
+        padding: 75px 6%;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .planet-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .planet-image {
+        height: 115px;
+    }
+
+    .galaxy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galaxy-card {
+        min-height: 280px;
+    }
+
+    .missions {
+        padding: 75px 6%;
+    }
+
+    .mission-item {
+        gap: 15px;
+        padding: 22px 18px;
+    }
+
+    .year {
+        font-size: 14px;
+        min-width: 55px;
+    }
+
+    .fact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .closing {
+        padding: 85px 15px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .planet-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
