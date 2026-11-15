@@ -1,481 +1,393 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="AstroNova - Explore astronomy and India's space journey.">
     <title>AstroNova | Beyond the Universe</title>
-
     <link rel="stylesheet" href="style.css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
     <!-- NAVIGATION BAR -->
+    <header class="navbar">
+        <a href="#home" class="logo">✦ ASTRO<span>NOVA</span></a>
 
-    <header>
-        <nav class="navbar">
-
-            <a href="#home" class="logo">
-                <span>✦</span> ASTRONOVA
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Universe</a></li>
-                <li><a href="#planets">Planets</a></li>
-                <li><a href="#galaxies">Galaxies</a></li>
-                <li><a href="#missions">Missions</a></li>
-            </ul>
-
-            <a href="#facts" class="nav-button">
-                Explore Space ↗
-            </a>
-
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#solar-system">Solar System</a>
+            <a href="#galaxies">Galaxies</a>
+            <a href="#india">India in Space</a>
+            <a href="#missions">Missions</a>
         </nav>
     </header>
 
-
     <!-- HERO SECTION -->
-
     <section class="hero" id="home">
 
-        <div class="stars"></div>
-
         <div class="hero-content">
+            <p class="eyebrow">✦ YOUR GATEWAY TO THE COSMOS</p>
 
-            <p class="eyebrow">
-                THE UNIVERSE IS WAITING
-            </p>
-
-            <h1>
-                BEYOND<br>
-                THE <span>UNIVERSE.</span>
+            <h1>Beyond the<br>
+                <span>Universe.</span>
             </h1>
 
             <p class="hero-description">
-                Journey through distant galaxies, discover
-                mysterious planets and explore the wonders
-                of the infinite cosmos.
+                Explore distant worlds, uncover cosmic mysteries
+                and discover India's remarkable journey into space.
             </p>
 
-            <a href="#planets" class="main-button">
-                BEGIN EXPLORATION <span>→</span>
-            </a>
-
-            <div class="hero-caption">
-                <span>01 / INFINITE POSSIBILITIES</span>
-                <span>EST. FOR THE CURIOUS MINDS</span>
+            <div class="hero-buttons">
+                <a href="#solar-system" class="btn">Begin Exploring ↗</a>
+                <a href="#india" class="secondary-link">
+                    Discover India's space story
+                </a>
             </div>
 
+            <div class="stats">
+                <div>
+                    <h3>8</h3>
+                    <p>Planets</p>
+                </div>
+                <div>
+                    <h3>∞</h3>
+                    <p>Discoveries</p>
+                </div>
+                <div>
+                    <h3>1</h3>
+                    <p>Universe</p>
+                </div>
+            </div>
         </div>
 
-        <div class="orbit-decoration">
-            <div class="orbit-ring"></div>
-            <div class="orbit-planet"></div>
+        <!-- CSS PLANET ILLUSTRATION -->
+        <div class="space-art">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="hero-planet"></div>
+            <div class="hero-moon"></div>
         </div>
+
+        <div class="scroll-text">SCROLL TO EXPLORE ↓</div>
 
     </section>
 
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
 
-    <!-- INTRODUCTION SECTION -->
+        <p class="section-label">01 / ABOUT ASTRONOVA</p>
 
-    <section class="about" id="about">
-
-        <p class="eyebrow">A WORLD WITHOUT LIMITS</p>
-
-        <h2>
-            Discover the <span>unknown.</span>
-        </h2>
-
-        <p class="about-text">
-            The universe is a vast expanse filled with stars,
-            planets, galaxies and extraordinary mysteries.
-            AstroNova brings the wonders of space closer to
-            curious minds through an exciting journey into
-            astronomy and exploration.
-        </p>
-
-        <div class="space-stats">
-
-            <div class="stat">
-                <h3>8</h3>
-                <p>PLANETS</p>
-            </div>
-
-            <div class="stat">
-                <h3>1</h3>
-                <p>SOLAR SYSTEM</p>
-            </div>
-
-            <div class="stat">
-                <h3>∞</h3>
-                <p>POSSIBILITIES</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SOLAR SYSTEM SECTION -->
-
-    <section class="planets" id="planets">
-
-        <div class="section-heading">
+        <div class="about-grid">
+            <h2>A universe of<br><span>knowledge.</span></h2>
 
             <div>
-                <p class="eyebrow">OUR COSMIC NEIGHBOURHOOD</p>
+                <p>
+                    AstroNova is a student-created educational website
+                    that makes space science easier and more interesting
+                    to explore.
+                </p>
+
+                <p class="muted">
+                    It combines astronomy fundamentals with India's
+                    achievements in space exploration.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SOLAR SYSTEM -->
+    <section class="section" id="solar-system">
+
+        <div class="section-heading">
+            <div>
+                <p class="section-label">02 / OUR NEIGHBOURHOOD</p>
                 <h2>Meet the <span>planets.</span></h2>
             </div>
 
             <p>
-                Eight fascinating worlds.
-                One extraordinary solar system.
+                Eight planets orbit our Sun. Each world has
+                its own character, atmosphere and story.
             </p>
-
         </div>
-
 
         <div class="planet-grid">
 
             <article class="planet-card">
-
-                <div class="planet-image mercury"></div>
-
-                <span class="planet-number">01 / INNER PLANET</span>
-
+                <div class="planet mercury"></div>
+                <span class="number">01</span>
                 <h3>Mercury</h3>
-
-                <p>
-                    The smallest planet and the closest
-                    planet to the Sun.
-                </p>
-
+                <p>The smallest planet and the closest to the Sun.</p>
+                <small>TERRESTRIAL</small>
             </article>
 
-
             <article class="planet-card">
-
-                <div class="planet-image venus"></div>
-
-                <span class="planet-number">02 / INNER PLANET</span>
-
+                <div class="planet venus"></div>
+                <span class="number">02</span>
                 <h3>Venus</h3>
-
-                <p>
-                    The hottest planet in our solar system.
-                </p>
-
+                <p>A rocky world with a very thick, hot atmosphere.</p>
+                <small>TERRESTRIAL</small>
             </article>
 
-
             <article class="planet-card">
-
-                <div class="planet-image earth"></div>
-
-                <span class="planet-number">03 / INNER PLANET</span>
-
+                <div class="planet earth"></div>
+                <span class="number">03</span>
                 <h3>Earth</h3>
-
-                <p>
-                    Our home planet, known for supporting life.
-                </p>
-
+                <p>Our home planet, with liquid water on its surface.</p>
+                <small>TERRESTRIAL</small>
             </article>
 
-
             <article class="planet-card">
-
-                <div class="planet-image mars"></div>
-
-                <span class="planet-number">04 / INNER PLANET</span>
-
+                <div class="planet mars"></div>
+                <span class="number">04</span>
                 <h3>Mars</h3>
-
-                <p>
-                    The red planet with a fascinating landscape.
-                </p>
-
+                <p>The red planet, explored by robotic missions.</p>
+                <small>TERRESTRIAL</small>
             </article>
 
-
             <article class="planet-card">
-
-                <div class="planet-image jupiter"></div>
-
-                <span class="planet-number">05 / OUTER PLANET</span>
-
+                <div class="planet jupiter"></div>
+                <span class="number">05</span>
                 <h3>Jupiter</h3>
-
-                <p>
-                    The largest planet in the solar system.
-                </p>
-
+                <p>The largest planet, known for its giant storms.</p>
+                <small>GAS GIANT</small>
             </article>
 
-
             <article class="planet-card">
-
-                <div class="planet-image saturn"></div>
-
-                <span class="planet-number">06 / OUTER PLANET</span>
-
+                <div class="planet saturn"></div>
+                <span class="number">06</span>
                 <h3>Saturn</h3>
-
-                <p>
-                    Famous for its magnificent ring system.
-                </p>
-
+                <p>A gas giant famous for its bright ring system.</p>
+                <small>GAS GIANT</small>
             </article>
 
-
             <article class="planet-card">
-
-                <div class="planet-image uranus"></div>
-
-                <span class="planet-number">07 / OUTER PLANET</span>
-
+                <div class="planet uranus"></div>
+                <span class="number">07</span>
                 <h3>Uranus</h3>
-
-                <p>
-                    An ice giant that rotates on its side.
-                </p>
-
+                <p>An ice giant with a strongly tilted rotation axis.</p>
+                <small>ICE GIANT</small>
             </article>
 
-
             <article class="planet-card">
-
-                <div class="planet-image neptune"></div>
-
-                <span class="planet-number">08 / OUTER PLANET</span>
-
+                <div class="planet neptune"></div>
+                <span class="number">08</span>
                 <h3>Neptune</h3>
-
-                <p>
-                    A distant ice giant with powerful winds.
-                </p>
-
+                <p>A distant ice giant with extremely fast winds.</p>
+                <small>ICE GIANT</small>
             </article>
 
         </div>
-
     </section>
-
 
     <!-- GALAXIES SECTION -->
+    <section class="galaxy-section" id="galaxies">
 
-    <section class="galaxies" id="galaxies">
+        <div class="section">
+            <p class="section-label">03 / DEEP SPACE</p>
+
+            <h2>Not just stars.<br>
+                <span>Entire galaxies.</span>
+            </h2>
+
+            <p class="galaxy-description">
+                A galaxy is a huge collection of stars, gas,
+                dust and dark matter held together by gravity.
+                Our Solar System belongs to the Milky Way.
+            </p>
+
+            <div class="galaxy-facts">
+                <div>
+                    <h3>Milky Way</h3>
+                    <p>Our home galaxy</p>
+                </div>
+
+                <div>
+                    <h3>Andromeda</h3>
+                    <p>A nearby large galaxy</p>
+                </div>
+
+                <div>
+                    <h3>Nebulae</h3>
+                    <p>Clouds of gas and dust</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- INDIA IN SPACE -->
+    <section class="section" id="india">
 
         <div class="section-heading">
-
             <div>
-                <p class="eyebrow">ISLANDS OF STARS</p>
-                <h2>Worlds beyond <span>worlds.</span></h2>
+                <p class="section-label">04 / INDIA IN SPACE</p>
+                <h2>India's journey<br>
+                    <span>to the stars.</span>
+                </h2>
+            </div>
+
+            <p>
+                India's space programme uses science and technology
+                to explore space and support life on Earth.
+            </p>
+        </div>
+
+        <div class="india-feature">
+
+            <div class="rocket-art">
+                <div class="rocket-icon">🚀</div>
+                <p>ISRO • INDIA</p>
+            </div>
+
+            <div class="india-content">
+                <small>SPACE EXPLORATION</small>
+
+                <h3>Curiosity with a purpose.</h3>
+
+                <p>
+                    The Indian Space Research Organisation (ISRO)
+                    has developed important capabilities in satellite
+                    communication, navigation, weather services
+                    and scientific research.
+                </p>
+
+                <a href="https://www.isro.gov.in/"
+                   target="_blank" rel="noopener">
+                    Visit Official ISRO Website ↗
+                </a>
             </div>
 
         </div>
 
+        <div class="mission-grid">
 
-        <div class="galaxy-grid">
-
-            <article class="galaxy-card milky">
-
-                <div class="galaxy-content">
-                    <span>01 / OUR GALAXY</span>
-                    <h3>Milky Way</h3>
-                    <p>
-                        The galaxy that contains our solar system.
-                    </p>
-                </div>
-
+            <article>
+                <span>2008</span>
+                <h3>Chandrayaan-1</h3>
+                <p>
+                    India's first lunar mission helped strengthen
+                    evidence for water molecules on the Moon.
+                </p>
             </article>
 
-
-            <article class="galaxy-card andromeda">
-
-                <div class="galaxy-content">
-                    <span>02 / NEARBY GALAXY</span>
-                    <h3>Andromeda</h3>
-                    <p>
-                        A neighbouring spiral galaxy.
-                    </p>
-                </div>
-
+            <article>
+                <span>2014</span>
+                <h3>Mangalyaan</h3>
+                <p>
+                    India's Mars Orbiter Mission reached Mars orbit
+                    in its first attempt.
+                </p>
             </article>
 
-
-            <article class="galaxy-card whirlpool">
-
-                <div class="galaxy-content">
-                    <span>03 / SPIRAL GALAXY</span>
-                    <h3>Whirlpool Galaxy</h3>
-                    <p>
-                        Known for its beautiful spiral structure.
-                    </p>
-                </div>
-
+            <article>
+                <span>2023</span>
+                <h3>Chandrayaan-3</h3>
+                <p>
+                    India achieved a successful soft landing near
+                    the Moon's south polar region.
+                </p>
             </article>
 
+            <article>
+                <span>2023</span>
+                <h3>Aditya-L1</h3>
+                <p>
+                    India's first space-based solar observatory
+                    mission studies the Sun.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- SPACE TIMELINE -->
+    <section class="timeline-section" id="missions">
+
+        <div class="section">
+            <p class="section-label">05 / SPACE MILESTONES</p>
+
+            <h2>Milestones that move<br>
+                <span>us forward.</span>
+            </h2>
+
+            <div class="timeline">
+
+                <article>
+                    <span>1958</span>
+                    <div>
+                        <h3>NASA Established</h3>
+                        <p>The United States established its civilian space agency.</p>
+                    </div>
+                </article>
+
+                <article>
+                    <span>1969</span>
+                    <div>
+                        <h3>Apollo 11</h3>
+                        <p>Humans landed on the Moon for the first time.</p>
+                    </div>
+                </article>
+
+                <article>
+                    <span>1990</span>
+                    <div>
+                        <h3>Hubble Space Telescope</h3>
+                        <p>Hubble began observing the universe from orbit.</p>
+                    </div>
+                </article>
+
+                <article>
+                    <span>2021</span>
+                    <div>
+                        <h3>James Webb Space Telescope</h3>
+                        <p>JWST launched to study the early universe and distant worlds.</p>
+                    </div>
+                </article>
+
+            </div>
         </div>
 
     </section>
-
-
-    <!-- SPACE MISSIONS SECTION -->
-
-    <section class="missions" id="missions">
-
-        <p class="eyebrow">HUMANITY BEYOND EARTH</p>
-
-        <h2>Milestones in <span>space exploration.</span></h2>
-
-        <div class="mission-list">
-
-            <div class="mission-item">
-                <span class="year">1957</span>
-                <div>
-                    <h3>Sputnik 1</h3>
-                    <p>
-                        The first artificial satellite launched into orbit.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="mission-item">
-                <span class="year">1969</span>
-                <div>
-                    <h3>Apollo 11</h3>
-                    <p>
-                        The first crewed mission to land humans on the Moon.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="mission-item">
-                <span class="year">1990</span>
-                <div>
-                    <h3>Hubble Space Telescope</h3>
-                    <p>
-                        A space telescope that transformed our
-                        understanding of the universe.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="mission-item">
-                <span class="year">2023</span>
-                <div>
-                    <h3>Chandrayaan-3</h3>
-                    <p>
-                        India's successful lunar landing mission.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- COSMIC FACTS SECTION -->
-
-    <section class="facts" id="facts">
-
-        <p class="eyebrow">THINK BEYOND THE ORDINARY</p>
-
-        <h2>Curiosities of the <span>cosmos.</span></h2>
-
-        <div class="fact-grid">
-
-            <div class="fact-card">
-                <div class="fact-icon">☀</div>
-                <h3>The Sun</h3>
-                <p>
-                    The Sun contains more than 99% of
-                    the solar system's mass.
-                </p>
-            </div>
-
-
-            <div class="fact-card">
-                <div class="fact-icon">🌌</div>
-                <h3>Galaxies</h3>
-                <p>
-                    Galaxies contain stars, gas, dust
-                    and dark matter.
-                </p>
-            </div>
-
-
-            <div class="fact-card">
-                <div class="fact-icon">🪐</div>
-                <h3>Saturn</h3>
-                <p>
-                    Saturn has a spectacular system
-                    of rings made mainly of ice and rock.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
 
     <!-- CLOSING SECTION -->
+    <section class="closing section">
 
-    <section class="closing">
+        <p class="section-label">KEEP LOOKING UP</p>
 
-        <p class="eyebrow">THE JOURNEY NEVER ENDS</p>
-
-        <h2>
-            Look up.<br>
-            <span>Dream beyond.</span>
+        <h2>The universe is vast.<br>
+            <span>Stay curious.</span>
         </h2>
 
-        <a href="#home" class="main-button">
-            RETURN TO THE STARS ↑
-        </a>
+        <p>
+            AstroNova is a beginning — a place to ask questions,
+            explore ideas and celebrate discovery.
+        </p>
+
+        <a href="#home" class="btn">Back to the Top ↑</a>
 
     </section>
 
-
     <!-- FOOTER -->
-
     <footer>
 
-        <div class="footer-logo">
-            ✦ ASTRONOVA
-        </div>
+        <a href="#home" class="logo">✦ ASTRO<span>NOVA</span></a>
 
-        <p>Explore the Unknown. Discover the Infinite.</p>
+        <p>Student Project | GIET University, Gunupur, Odisha</p>
 
-        <div class="footer-links">
-
-            <a href="#home">Home</a>
-            <a href="#about">Universe</a>
-            <a href="#planets">Planets</a>
-            <a href="#galaxies">Galaxies</a>
-            <a href="#missions">Missions</a>
-
-        </div>
-
-        <p class="copyright">
-            © 2026 AstroNova | Designed for curious minds.
+        <p>
+            Archita Behera · Sheetalashree Mahapatra ·
+            Pratyasha Ratnalu
         </p>
+
+        <small>
+            Developed using HTML5 and CSS3.
+            Educational project for academic demonstration.
+        </small>
 
     </footer>
 
 </body>
-                                                               </html>
-                                                               
+</html>
