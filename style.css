@@ -104,7 +104,8 @@ nav a:hover::after {
     color: #8fdcff;
     letter-spacing: 25px;
     opacity: 0.5;
-    animation: starsMove 8s linear infinite alternate;
+    animation: starsMove 8s linear infinite alternate,
+               starTwinkle 3s ease-in-out infinite alternate;
 }
 
 .hero-content {
@@ -185,8 +186,8 @@ nav a:hover::after {
 
 .solar-system {
     width: 100%;
-    max-width: 650px;
-    height: 580px;
+    max-width: 700px;
+    height: 680px;
     margin: 20px auto;
     position: relative;
     display: flex;
@@ -220,6 +221,7 @@ nav a:hover::after {
     border: 1px solid rgba(143,220,255,0.3);
     border-radius: 50%;
     animation: orbitRotation linear infinite;
+    animation-direction: reverse;
 }
 
 .mercury-orbit {
@@ -256,6 +258,18 @@ nav a:hover::after {
     width: 510px;
     height: 510px;
     animation-duration: 30s;
+}
+
+.uranus-orbit {
+    width: 580px;
+    height: 580px;
+    animation-duration: 38s;
+}
+
+.neptune-orbit {
+    width: 650px;
+    height: 650px;
+    animation-duration: 46s;
 }
 
 /* PLANETS */
@@ -315,6 +329,22 @@ nav a:hover::after {
     margin-left: -13px;
     margin-top: -267px;
     background: #d9bd83;
+}
+
+.uranus {
+    width: 22px;
+    height: 22px;
+    margin-left: -11px;
+    margin-top: -300px;
+    background: #79dce5;
+}
+
+.neptune {
+    width: 22px;
+    height: 22px;
+    margin-left: -11px;
+    margin-top: -335px;
+    background: #486ff2;
 }
 
 /* SATURN RING */
@@ -395,6 +425,43 @@ nav a:hover::after {
     border-radius: 15px;
     border: 1px solid #283960;
     transition: 0.4s;
+    animation: cardFloatIn 0.7s ease-out backwards;
+}
+
+.planet-card:nth-child(2) { animation-delay: 0.08s; }
+.planet-card:nth-child(3) { animation-delay: 0.16s; }
+.planet-card:nth-child(4) { animation-delay: 0.24s; }
+.planet-card:nth-child(5) { animation-delay: 0.32s; }
+.planet-card:nth-child(6) { animation-delay: 0.4s; }
+.planet-card:nth-child(7) { animation-delay: 0.48s; }
+.planet-card:nth-child(8) { animation-delay: 0.56s; }
+
+.planet-card h3 {
+    color: #8fdcff;
+    margin-bottom: 8px;
+}
+
+.planet-card > p {
+    color: #c4cce7;
+    font-size: 14px;
+}
+
+.planet-facts {
+    list-style: none;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #35446d;
+    color: #c4cce7;
+    font-size: 12px;
+    text-align: left;
+}
+
+.planet-facts li + li {
+    margin-top: 5px;
+}
+
+.planet-facts strong {
+    color: #ffd166;
 }
 
 .planet-card:hover {
@@ -464,6 +531,15 @@ nav a:hover::after {
     border-radius: 15px;
     border: 1px solid #35446d;
     transition: 0.4s;
+    animation: cardFloatIn 0.7s ease-out backwards;
+}
+
+.mystery-card:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.mystery-card:nth-child(3) {
+    animation-delay: 0.24s;
 }
 
 .mystery-card:hover {
@@ -497,7 +573,14 @@ nav a:hover::after {
     border-radius: 12px;
     margin-bottom: 25px;
     transition: 0.3s;
+    animation: cardFloatIn 0.65s ease-out backwards;
 }
+
+.timeline-item:nth-child(2) { animation-delay: 0.08s; }
+.timeline-item:nth-child(3) { animation-delay: 0.16s; }
+.timeline-item:nth-child(4) { animation-delay: 0.24s; }
+.timeline-item:nth-child(5) { animation-delay: 0.32s; }
+.timeline-item:nth-child(6) { animation-delay: 0.4s; }
 
 .timeline-item::before {
     content: "";
@@ -568,7 +651,17 @@ nav a:hover::after {
     transition: 0.3s;
 }
 
-.quiz-form label:hover span {
+.quiz-form label > span:first-of-type {
+    position: relative;
+    z-index: 1;
+}
+
+.quiz-form input:focus-visible + span {
+    outline: 3px solid #8fdcff;
+    outline-offset: 3px;
+}
+
+.quiz-form label:hover > span:first-of-type {
     background: #26385f;
     border-color: #8fdcff;
 }
@@ -581,11 +674,25 @@ nav a:hover::after {
     transform: translateX(7px);
 }
 
-.answer-note {
-    color: #ffd166;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
+.quiz-form .choice-feedback {
+    display: none;
+    margin: 8px 0 0 8px;
+    padding: 0 10px;
+    border: 0;
+    font-size: 13px;
+    animation: feedbackAppear 0.3s ease-out both;
+}
+
+.quiz-form input:checked ~ .choice-feedback {
+    display: block;
+}
+
+.quiz-form .choice-feedback.correct {
+    color: #91e6ae;
+}
+
+.quiz-form .choice-feedback.incorrect {
+    color: #ffaaa6;
 }
 
 /* =================================
@@ -615,6 +722,18 @@ nav a:hover::after {
     cursor: pointer;
     box-shadow: 0 0 15px #ff512f;
     transition: 0.3s;
+}
+
+.launch-button .launch-reset {
+    display: none;
+}
+
+#launch-toggle:checked + .launch-button .launch-start {
+    display: none;
+}
+
+#launch-toggle:checked + .launch-button .launch-reset {
+    display: inline;
 }
 
 .launch-button:hover {
@@ -839,6 +958,18 @@ nav a:hover::after {
     font-weight: bold;
 }
 
+@keyframes feedbackAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 #launch-toggle:checked ~ .launch-message {
     animation: showMessage 1s ease 2.5s forwards;
 }
@@ -900,6 +1031,28 @@ footer a:hover {
 
     to {
         transform: translateY(35px);
+    }
+}
+
+@keyframes starTwinkle {
+    from {
+        opacity: 0.25;
+    }
+
+    to {
+        opacity: 0.7;
+    }
+}
+
+@keyframes cardFloatIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -993,6 +1146,7 @@ footer a:hover {
         scroll-behavior: auto !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+        animation-delay: 0s !important;
         transition-duration: 0.01ms !important;
     }
 
